@@ -1,20 +1,5 @@
-import gspread
-from google.oauth2.service_account import Credentials
-
-SCOPE = [
-    "https://www.googleapis.com/auth/spreadsheets",
-    "https://www.googleapis.com/auth/drive.file",
-    "https://www.googleapis.com/auth/drive"
-    ]
-
-CREDS = Credentials.from_service_account_file('creds.json')
-SCOPED_CREDS = CREDS.with_scopes(SCOPE)
-GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open('random_word')
-
-words = SHEET.worksheet('words')
-
-data = words.get_all_values()
+import random
+mylist = ["developer", "python", "javascript", "meteor", "react", "github", "django", "bootstrap", "jquery", "angular"]
 
 #Welcome message
 print("Welcome to Hangman!")
@@ -40,8 +25,7 @@ name = str(input("Enter your name: "))
 #Good luck message
 print("\nGood luck, " + name)
 
-#Hidden word the player is trying to guess
-hiddenWord = words
+hiddenWord = random.choice(mylist)
 lettersGuessed = ""
 
 #The number of incorrect answers before the player loses

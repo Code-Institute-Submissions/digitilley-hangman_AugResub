@@ -62,7 +62,7 @@ while incorrectAnswers > 0:
         incorrectAnswers -= 1
         print(f"\nAhhh... unfortunately {guess} isn't in the hidden word. You have {incorrectAnswers} turn(s) left.")
     
-    #Keep a list of all letters guessed
+    #list of letters guessed
     lettersGuessed = lettersGuessed + guess
     incorrectLetterCount = 0
 
@@ -70,9 +70,17 @@ while incorrectAnswers > 0:
         if letter in lettersGuessed:
             print(f"{letter}", end="")
         else:
-            print("-", end="")
+            print("_", end="")
             incorrectLetterCount +=1
-
+    print("")
     
+    #If there were no wrong letters, the player wins!
+    if incorrectLetterCount == 0:
+        print(f"\nCongrats, {name}! The hidden word was {randomWord}. You win.")
+        break
+#If the player uses up their 6 lives, they lose!
+else: 
+    print(f"\nSorry you ran out of guesses! Better luck next time {name}.")
+
 
 

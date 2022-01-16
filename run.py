@@ -41,13 +41,11 @@ while incorrectAnswers > 0:
 
     # Player to guess a lettera
     guess = input("\nPick a letter: ")
-    
     if guess in hiddenWord:
         print(f"\nCorrect! There are one or more {guess}'s in the word.")
     else:
         incorrectAnswers -= 1
         print(f"\n{guess} is incorrect.{incorrectAnswers} turn(s) left.")
-    
     # list of letters guessed
     lettersGuessed = lettersGuessed + guess
     incorrectLetterCount = 0
@@ -59,11 +57,10 @@ while incorrectAnswers > 0:
             print("_", end="")
             incorrectLetterCount += 1
     print("")
-    
     # If there were no wrong letters, the player wins!
     if incorrectLetterCount == 0:
         print(f"\nCongrats, {name}! {hiddenWord} is correct. You win.")
         break
 # If the player uses up their 6 lives, they lose!
 else:
-    print(f"\nSorry you ran out of guesses! Better luck next time {name}.")
+    print(f"\nSorry you ran out of guesses! Better luck next time, {name}.")

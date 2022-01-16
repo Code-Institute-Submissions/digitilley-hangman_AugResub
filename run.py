@@ -2,6 +2,10 @@
 print("Welcome to Hangman!")
 
 #Rules
+"""
+used this article to help with rules section:
+https://stackoverflow.com/questions/34980251/how-to-print-multiple-lines-of-text-with-python
+"""
 rules = """
 The aim of the game is to correctly guess the random word...
 
@@ -17,4 +21,5 @@ name = str(input("Enter your name: "))
 #Good luck message
 print("\nGood luck, "+ name)
 
+#Random Word
 

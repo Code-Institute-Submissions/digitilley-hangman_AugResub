@@ -39,10 +39,12 @@ print(rules)
 name = str(input("Enter your name: "))
 
 #Good luck message
-print("\nGood luck, "+ name)
+print("\nGood luck, " + name)
 
 #Random word the player is trying to guess
 randomWord = "python"
+lettersGuessed = ""
+scoreBoard = ""
 
 #The number of incorrect answers before the player loses
 incorrectAnswers = 6
@@ -53,12 +55,12 @@ while incorrectAnswers > 0:
 
     #Player to guess a letter
     guess = input("\nPick a letter: ")
-    
     if guess in randomWord:
-        print(f"That's Correct! There is one or more {guess}'s in the hidden word.")
+        print(f"\nThat's Correct! There are one or more {guess}'s in the hidden word.")
     else:
         incorrectAnswers -= 1
-        print(f"Ahhh... unfortunately {guess} isn't in the hidden word. You have {incorrectAnswers} turn(s) left.")
+        print(f"\nAhhh... unfortunately {guess} isn't in the hidden word. You have {incorrectAnswers} turn(s) left.")
 
+    
 
 

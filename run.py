@@ -15,7 +15,6 @@ SHEET = GSPREAD_CLIENT.open('random_word')
 words = SHEET.worksheet('words')
 
 data = words.get_all_values()
-print(data)
 
 #Welcome message
 print("Welcome to Hangman!")
@@ -26,7 +25,7 @@ used this article to help with rules section:
 https://stackoverflow.com/questions/34980251/how-to-print-multiple-lines-of-text-with-python
 """
 rules = """
-The aim of the game is to correctly guess the random word...
+The aim of the game is to correctly guess the hidden word...
 
 Guess a letter to begin. If it's correct, the letter will be displayed.
 
@@ -41,10 +40,9 @@ name = str(input("Enter your name: "))
 #Good luck message
 print("\nGood luck, " + name)
 
-#Random word the player is trying to guess
-randomWord = "python"
+#Hidden word the player is trying to guess
+hiddenWord = words
 lettersGuessed = ""
-scoreBoard = ""
 
 #The number of incorrect answers before the player loses
 incorrectAnswers = 6
@@ -56,7 +54,7 @@ while incorrectAnswers > 0:
     #Player to guess a lettera
     guess = input("\nPick a letter: ")
     
-    if guess in randomWord:
+    if guess in hiddenWord:
         print(f"\nThat's Correct! There are one or more {guess}'s in the hidden word.")
     else:
         incorrectAnswers -= 1
@@ -66,7 +64,7 @@ while incorrectAnswers > 0:
     lettersGuessed = lettersGuessed + guess
     incorrectLetterCount = 0
 
-    for letter in randomWord: 
+    for letter in hiddenWord: 
         if letter in lettersGuessed:
             print(f"{letter}", end="")
         else:
@@ -76,7 +74,7 @@ while incorrectAnswers > 0:
     
     #If there were no wrong letters, the player wins!
     if incorrectLetterCount == 0:
-        print(f"\nCongrats, {name}! The hidden word was {randomWord}. You win.")
+        print(f"\nCongrats, {name}! The hidden word was {hiddenWord}. You win.")
         break
 #If the player uses up their 6 lives, they lose!
 else: 

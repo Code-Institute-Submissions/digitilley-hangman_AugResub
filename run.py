@@ -53,13 +53,25 @@ incorrectAnswers = 6
 #Player wins if they guess the word before using up their 6 lives
 while incorrectAnswers > 0:
 
-    #Player to guess a letter
+    #Player to guess a lettera
     guess = input("\nPick a letter: ")
+    
     if guess in randomWord:
         print(f"\nThat's Correct! There are one or more {guess}'s in the hidden word.")
     else:
         incorrectAnswers -= 1
         print(f"\nAhhh... unfortunately {guess} isn't in the hidden word. You have {incorrectAnswers} turn(s) left.")
+    
+    #Keep a list of all letters guessed
+    lettersGuessed = lettersGuessed + guess
+    incorrectLetterCount = 0
+
+    for letter in randomWord: 
+        if letter in lettersGuessed:
+            print(f"{letter}", end="")
+        else:
+            print("-", end="")
+            incorrectLetterCount +=1
 
     
 

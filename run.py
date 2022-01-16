@@ -45,7 +45,7 @@ while incorrectAnswers > 0:
         print(f"\nCorrect! There are one or more {guess}'s in the word.")
     else:
         incorrectAnswers -= 1
-        print(f"\n{guess} is incorrect.{incorrectAnswers} turn(s) left.")
+        print(f"\n{guess} is incorrect. {incorrectAnswers} turn(s) left.")
     # list of letters guessed
     lettersGuessed = lettersGuessed + guess
     incorrectLetterCount = 0

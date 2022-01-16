@@ -30,7 +30,8 @@ The aim of the game is to correctly guess the random word...
 
 Guess a letter to begin. If it's correct, the letter will be displayed.
 
-If you guess incorrectly, you will lose 1 life. You get a total of 6 lives.
+If you guess incorrectly, you lose a life. You get a total of 6 lives.
+-----------------------------------------------------------------------
 """
 print(rules)
 
@@ -40,5 +41,24 @@ name = str(input("Enter your name: "))
 #Good luck message
 print("\nGood luck, "+ name)
 
-#Random Word
+#Random word the player is trying to guess
+randomWord = "python"
+
+#The number of incorrect answers before the player loses
+incorrectAnswers = 6
+
+#Loop until incorrectAnswers = 6
+#Player wins if they guess the word before using up their 6 lives
+while incorrectAnswers > 0:
+
+    #Player to guess a letter
+    guess = input("\nPick a letter: ")
+    
+    if guess in randomWord:
+        print(f"That's Correct! There is one or more {guess}'s in the hidden word.")
+    else:
+        incorrectAnswers -= 1
+        print(f"Ahhh... unfortunately {guess} isn't in the hidden word. You have {incorrectAnswers} turn(s) left.")
+
+
 

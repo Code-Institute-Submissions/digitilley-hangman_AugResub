@@ -41,7 +41,7 @@ def hangman():
 
         if guess in valid_entry:
             userGuess = userGuess + guess
-        if userGuess in userGuess:
+        if userGuess in guessedLetters:
             print('You tried that letter already/n')
             continue
         else:

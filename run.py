@@ -6,45 +6,47 @@ https://stackoverflow.com/questions/306400/how-can-i-randomly-select-an-item-fro
 
 # hangman game function
 def hangman():
-    #List of secret words which appear at random with each new game
     mylist = ["python", "javascript", "react", "github", "django", "bootstrap"]
+    hiddenWord = random.choice(mylist)
     secretWord = random.choice(mylist)
-
-    #Number of lives user gets (each wrong answer results in -1)
     turns = 6
-
-    #User input
-    userGuess = ""
-
-    #List of letters that have been guessed already
-    guessedLetters = []
-
-    #List of characters that will be accepted as valid entries
+    lettersGuessed = ""
     valid_entry = set("abcdefghijklmnopqrstuvwxyz")
 
+    while len(hiddenWord) > 0:
     while len(secretWord) > 0:
         main_word = ""
 
+        for letter in hiddenWord:
         for letter in secretWord:
-            if letter in userGuess:
+            if letter in lettersGuessed:
                 main_word = main_word + letter
             else:
                 main_word = main_word + "_ "
 
+        if main_word == hiddenWord:
         if main_word == secretWord:
             print(main_word)
-            print("/nContrats, you won!!!!")
+            print("You won!!!!")
             break
 
-        print("\nPick a letter\n", main_word)
+        print("Have another go... ", main_word)
+        print("Pick a letter", main_word)
         guess = input()
 
         if guess in valid_entry:
-            userGuess = userGuess + guess
+            lettersGuessed = lettersGuessed + guess
+        if lettersGuessed in lettersGuessed:
+            print('You tried that letter already')
+            continue
         else:
             print("Enter a valid character")
             guess = input()
+        if lettersGuessed in lettersGuessed:
+            print('You tried that letter already')
+            continue
 
+        if guess not in hiddenWord:
         if guess not in secretWord:
             turns = turns - 1
 
@@ -92,22 +94,16 @@ def hangman():
                 print("      / \      ")
                 print("I'm sorry, you lose. Better luck next time!")
                 break
-
-
 # Welcome message
 print("Welcome to Hangman!")
-
 # Rules
 rules = """
 The aim of the game is to correctly guess the hidden word...
-
 Guess a letter to begin. If it's correct, the letter will be displayed.
-
 If you guess incorrectly, you lose a life. You get a total of 6 lives.
 -----------------------------------------------------------------------
 """
 print(rules)
-
 # Enter name
 name = str(input("Enter your name: "))
 print("\nWelcome, " + name)

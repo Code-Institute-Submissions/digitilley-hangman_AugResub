@@ -28,28 +28,25 @@ def hangman():
         for letter in secretWord:
             if letter in userGuess:
                 main_word = main_word + letter
-                if userGuess in guessedLetters:
-                    print('You tried that letter already')
-                    continue
             else:
                 main_word = main_word + "_ "
 
         if main_word == secretWord:
             print(main_word)
-            print("You won!!!!")
+            print("/nContrats, you won!!!!")
             break
 
-        print("Pick a letter", main_word)
+        print("/nPick a letter/n", main_word)
         guess = input()
 
         if guess in valid_entry:
             userGuess = userGuess + guess
+        if userGuess in userGuess:
+            print('You tried that letter already/n')
+            continue
         else:
             print("Enter a valid character")
             guess = input()
-        if userGuess in userGuess:
-            print('You tried that letter already')
-            continue
 
         if guess not in secretWord:
             turns = turns - 1

@@ -22,7 +22,7 @@ def hangman():
             print(main_word)
             print("You won!!!!")
             break
-        print("Pick a letter... \n", main_word)
+        print("Pick a letter...", main_word)
         guess = input()
         if guess in valid_entry:
             lettersGuessed = lettersGuessed + guess
@@ -85,5 +85,5 @@ print(rules)
 # Enter name
 name = str(input("Enter your name: "))
 print("\nWelcome, " + name)
-print("\nTry to guess the secret word in less than 6 attempts\n")
+print("\nTry to guess the secret word in less than 6 attempts.\n")
 hangman()

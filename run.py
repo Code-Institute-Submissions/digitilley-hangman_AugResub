@@ -6,18 +6,31 @@ https://stackoverflow.com/questions/306400/how-can-i-randomly-select-an-item-fro
 
 # hangman game function
 def hangman():
+    #List of secret words which appear at random with each new game
     mylist = ["python", "javascript", "react", "github", "django", "bootstrap"]
     secretWord = random.choice(mylist)
+
+    #Number of lives user gets (each wrong answer results in -1)
     turns = 6
-    lettersGuessed = ""
+
+    #User input
+    userGuess = ""
+
+    #List of letters that have been guessed already
+    guessedLetters = []
+
+    #List of characters that will be accepted as valid entries
     valid_entry = set("abcdefghijklmnopqrstuvwxyz")
 
     while len(secretWord) > 0:
         main_word = ""
 
         for letter in secretWord:
-            if letter in lettersGuessed:
+            if letter in userGuess:
                 main_word = main_word + letter
+                if userchoice in guessedletters:
+                    print('You tried that letter already')
+                    continue
             else:
                 main_word = main_word + "_ "
 
@@ -30,11 +43,11 @@ def hangman():
         guess = input()
 
         if guess in valid_entry:
-            lettersGuessed = lettersGuessed + guess
+            userGuess = userGuess + guess
         else:
             print("Enter a valid character")
             guess = input()
-        if lettersGuessed in lettersGuessed:
+        if userGuess in userGuess:
             print('You tried that letter already')
             continue
 

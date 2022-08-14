@@ -18,11 +18,15 @@ You can find more info on hangman the game [here](https://en.wikipedia.org/wiki/
 ### Existing Features
 -   Welcome message, rules and personalised name input
 
-<img src="views/images/welcome.png">
+<img src="views/images/welcome_hangman.png">
 
--   After the player inputs their name, they're greeted with a "good luck" message before being asked to select a letter.
+-   After the player inputs their name, they're greeted with a "Welcome" message before being asked to select a letter.
 
-<img src="views/images/good_luck.png">
+<img src="views/images/player_name.png">
+
+- If a user selects a character that isn't a letter in the alphabet, the following error will be displayed:
+
+<img src="views/images/incorrect_name.png">
 
 - If the user correctly guesses a letter that's in the hidden word, the following is displayed:
 
@@ -30,15 +34,15 @@ You can find more info on hangman the game [here](https://en.wikipedia.org/wiki/
 
 - If the user guesses an incorrect letter, a countdown is displayed to show how many lives they have left, along with the following message:
 
-<img src="views/images/incorrect.png">
+<img src="views/images/incorrect_guess.png">
 
 - If the player correctly guesses the word, a congratulatory message is displayed: 
 
-<img src="views/images/win.png">
+<img src="views/images/correct_word.png">
 
 - If the player runs out of lives, the following message will be displayed: 
 
-<img src="views/images/lose.png">
+<img src="views/images/incorrect_word.png">
 
 ## **Future Features**
 -   Visible hangman model

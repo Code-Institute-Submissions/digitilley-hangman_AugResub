@@ -28,7 +28,7 @@ def hangman():
         for letter in secretWord:
             if letter in userGuess:
                 main_word = main_word + letter
-                if userchoice in guessedletters:
+                if userGuess in guessedletters:
                     print('You tried that letter already')
                     continue
             else:

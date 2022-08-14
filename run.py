@@ -92,3 +92,4 @@ while True:
             print("\nWelcome, " + name)
             print("\nTry to guess the secret word in less than 6 attempts.")
             hangman()
+            break

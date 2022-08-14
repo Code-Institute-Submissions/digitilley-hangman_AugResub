@@ -36,39 +36,39 @@ def hangman():
                 print("6 turns left!\n")
                 print("---------------")
             if turns == 5:
-                print("5 turns left!\n")
+                print("Sorry, that letter isn't in the secret word. 5 turns left!\n")
                 print("---------------")
                 print("       O       ")
             if turns == 4:
-                print("4 turns left!\n")
+                print("Sorry, that letter isn't in the secret word. 4 turns left!\n")
                 print("---------------")
                 print("       O       ")
                 print("       |       ")
             if turns == 3:
-                print("3 turns left!\n")
+                print("Sorry, that letter isn't in the secret word. 3 turns left!\n")
                 print("---------------")
                 print("       O       ")
                 print("       |       ")
                 print("      /        ")
             if turns == 2:
-                print("2 turns left!\n")
+                print("Sorry, that letter isn't in the secret word. 2 turns left!\n")
                 print("---------------")
                 print("       O       ")
                 print("       |       ")
                 print("      / \      ")
             if turns == 1:
-                print("1 turn left!\n")
+                print("Sorry, that letter isn't in the secret word. 1 turn left!\n")
                 print("---------------")
                 print("       O /     ")
                 print("       |       ")
                 print("      / \      ")
             if turns == 0:
-                print("Oh no!\n")
+                print("Oh no! You've run out of turns.\n")
                 print("---------------")
                 print("       O_|     ")
                 print("     / | \     ")
                 print("      / \      ")
-                print("I'm sorry, you lose. Better luck next time!\n")
+                print("Better luck next time!\n")
                 break
 
 

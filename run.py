@@ -36,14 +36,11 @@ def hangman():
             print("/nContrats, you won!!!!")
             break
 
-        print("/nPick a letter/n", main_word)
+        print("\nPick a letter\n", main_word)
         guess = input()
 
         if guess in valid_entry:
             userGuess = userGuess + guess
-        if userGuess in guessedLetters:
-            print('You tried that letter already/n')
-            continue
         else:
             print("Enter a valid character")
             guess = input()

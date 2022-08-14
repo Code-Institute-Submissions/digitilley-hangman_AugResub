@@ -5,42 +5,40 @@ https://stackoverflow.com/questions/306400/how-can-i-randomly-select-an-item-fro
 """
 
 # hangman game function
-
-
 def hangman():
     mylist = ["python", "javascript", "react", "github", "django", "bootstrap"]
-    hiddenWord = random.choice(mylist)
+    secretWord = random.choice(mylist)
     turns = 6
     lettersGuessed = ""
     valid_entry = set("abcdefghijklmnopqrstuvwxyz")
 
-    while len(hiddenWord) > 0:
+    while len(secretWord) > 0:
         main_word = ""
 
-        for letter in hiddenWord:
+        for letter in secretWord:
             if letter in lettersGuessed:
                 main_word = main_word + letter
             else:
                 main_word = main_word + "_ "
 
-        if main_word == hiddenWord:
+        if main_word == secretWord:
             print(main_word)
             print("You won!!!!")
             break
 
-        print("Have another go... ", main_word)
+        print("Pick a letter", main_word)
         guess = input()
 
         if guess in valid_entry:
             lettersGuessed = lettersGuessed + guess
-        if lettersGuessed in lettersGuessed:
-            print('You tried that letter already')
-            continue
         else:
             print("Enter a valid character")
             guess = input()
+        if lettersGuessed in lettersGuessed:
+            print('You tried that letter already')
+            continue
 
-        if guess not in hiddenWord:
+        if guess not in secretWord:
             turns = turns - 1
 
             if turns == 6:

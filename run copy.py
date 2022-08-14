@@ -20,47 +20,47 @@ def hangman():
             print("Hurray! You guessed the secret word. You win!!!!")
             break
         print("\nPick a letter...", main_word)
-        guess = input("\n")
+        guess = input()
         if guess in valid_entry:
             userguess = userguess + guess
         else:
             print("Enter a valid character")
-            guess = input("\n")
+            guess = input()
         if guess not in secretword:
             turns = turns - 1
 
             if turns == 6:
-                print("\nSorry, that letter isn't in the secret word.6 turns left!\n")
+                print("6 turns left!\n")
                 print("---------------")
             if turns == 5:
-                print("\nSorry, that letter isn't in the secret word. 5 turns left!\n")
+                print("Sorry, that letter isn't in the secret word. 5 turns left!\n")
                 print("---------------")
                 print("       O       ")
             if turns == 4:
-                print("\nSorry, that letter isn't in the secret word. 4 turns left!\n")
+                print("Sorry, that letter isn't in the secret word. 4 turns left!\n")
                 print("---------------")
                 print("       O       ")
                 print("       |       ")
             if turns == 3:
-                print("\nSorry, that letter isn't in the secret word. 3 turns left!\n")
+                print("Sorry, that letter isn't in the secret word. 3 turns left!\n")
                 print("---------------")
                 print("       O       ")
                 print("       |       ")
                 print("      /        ")
             if turns == 2:
-                print("\nSorry, that letter isn't in the secret word. 2 turns left!\n")
+                print("Sorry, that letter isn't in the secret word. 2 turns left!\n")
                 print("---------------")
                 print("       O       ")
                 print("       |       ")
                 print("      / \      ")
             if turns == 1:
-                print("\nSorry, that letter isn't in the secret word. 1 turn left!\n")
+                print("Sorry, that letter isn't in the secret word. 1 turn left!\n")
                 print("---------------")
                 print("       O /     ")
                 print("       |       ")
                 print("      / \      ")
             if turns == 0:
-                print("\nOh no! You've run out of turns.\n")
+                print("Oh no! You've run out of turns.\n")
                 print("---------------")
                 print("       O_|     ")
                 print("     / | \     ")

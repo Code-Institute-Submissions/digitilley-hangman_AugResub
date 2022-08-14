@@ -20,7 +20,7 @@ def hangman():
                 main_word = main_word + "_ "
         if main_word == hiddenWord:
             print(main_word)
-            print("You won!!!!")
+            print("Hurray! You guessed the secret word. You win!!!!")
             break
         print("Pick a letter...", main_word)
         guess = input()
@@ -68,7 +68,7 @@ def hangman():
                 print("       O_|     ")
                 print("     / | \     ")
                 print("      / \      ")
-                print("Better luck next time!\n")
+                print("\nYou lose. Better luck next time!\n")
                 break
 
 

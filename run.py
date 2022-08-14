@@ -5,6 +5,8 @@ https://stackoverflow.com/questions/306400/how-can-i-randomly-select-an-item-fro
 """
 
 # hangman game function
+
+
 def hangman():
     mylist = ["python", "javascript", "react", "github", "django", "bootstrap"]
     hiddenWord = random.choice(mylist)
@@ -31,6 +33,9 @@ def hangman():
 
         if guess in valid_entry:
             lettersGuessed = lettersGuessed + guess
+        if lettersGuessed in lettersGuessed:
+            print('You tried that letter already')
+            continue
         else:
             print("Enter a valid character")
             guess = input()
